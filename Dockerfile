@@ -10,9 +10,9 @@ RUN apk add --no-cache --virtual rtlsdr-build-dependencies \
 COPY --from=grc /opt/gnuradio/ /opt/gnuradio/
 
 ENV REVISION master
-RUN git clone --depth 1 --branch ${REVISION} git://git.osmocom.org/rtl-sdr /rtl-sdr
+RUN git clone --depth 1 --branch ${REVISION} git://git.osmocom.org/rtl-sdr /rtlsdr
 
-WORKDIR /rtl-sdr/build
+WORKDIR /rtlsdr/build
 
 ENV CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}:/opt/gnuradio/
 
